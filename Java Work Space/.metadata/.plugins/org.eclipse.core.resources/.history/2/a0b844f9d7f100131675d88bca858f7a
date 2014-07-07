@@ -1,0 +1,13 @@
+package Java_Beginner;
+
+public class Num4_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			int num = 126457;
+			int mili=num/10000;
+			int sou =mili%10000;
+			System.out.println(mili+"万"+sou+"円");
+	}
+
+}

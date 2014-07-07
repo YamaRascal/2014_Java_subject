@@ -1,0 +1,145 @@
+package tintirorin;
+
+import java.util.Scanner;
+public class Process {
+	Scanner scan = new Scanner(System.in);
+	int num =3;					//サイコロの数
+	int menberNum;				//参加人数
+	int []dice = new int[3];	//プレイヤーのサイコロの出目
+
+	Process(int a){	//コンストラクタで参加人数の代入
+		menberNum = a;
+	}
+
+
+	public void playerscan(String[][] playerName) {
+		// TODO Auto-generated method stub
+		//////////////////////////////////////////////////////////////////////プレイヤー情報の入力//
+
+		for(int i=0;i < menberNum;i++){		//プレイヤーの名前を入力するfor文
+			if(i==0){
+				System.out.print("親になる人の名前を入力してください>");	////////////////配列０番が親
+				playerName[i][0] = scan.next();
+				String x ="親の";
+				playerName[i][0] =x+playerName[i];
+			}else{
+				System.out.print("子の名前を入力してください>");		////////////////子の名前の入力
+				playerName[i][0] = scan.next();}
+		}
+	}
+
+	public  void dicedata(int[][] mydice,int i){	//////////////////////サイコロをふる処理（ふった値をメインに返す）
+		for(int j=0;j<3;j++){
+			mydice[i][j] = (int)(Math.random()*6)+1;	//サイコロで１〜６の目を出す
+		}
+		//showDate();					//代入終了後にデータの表示、メソッドの呼び出し
+	}
+
+	public void showDate(int[][]mydice,int i){				//サイコロの値の表示
+		for(int j=0;j<num;j++){
+			System.out.print(mydice[i][j]+(j!=num-1?"　・　":""));
+		}
+		System.out.println();
+		//System.out.print("よって");
+	}
+	public void masterOutcome(String[][] playerName,int[][]mydice,boolean[][] res,int i){		//親の
+		res[0][0]=false;
+		res[0][1]=false;
+
+		//////////////////////////////////////////////////////////////親の役の処理
+		if(mydice[0][0]==4||mydice[0][1]==4||mydice[0][2]==4){
+			if(mydice[0][0]==5||mydice[0][1]==5||mydice[0][2]==5){
+				if(mydice[0][0]==6||mydice[0][1]==6||mydice[0][2]==6){
+					//親が４５６だから即刻、親の勝ち[親が勝ちの処理を入力]
+					res[0][0]=true;
+				}
+			}
+		}else
+			if(mydice[0][0]==1||mydice[0][1]==1||mydice[0][2]==1){
+				if(mydice[0][0]==2||mydice[0][1]==2||mydice[0][2]==2){
+					if(mydice[0][0]==3||mydice[0][1]==3||mydice[0][2]==3){
+						//親が１２３だから、親の即負け[親が負けの処理を入力]
+						res[0][1]=true;
+					}
+				}
+			}
+		//////////////////////////////////////////////////////////////親の値の処理
+		role(playerName,mydice,i,res);
+	}
+
+	public void outcome(int[][]mydice,int i,boolean[][] res){
+		
+		//////////////////////////////////////////////////////////////子の値の処理
+		standardDiceJudge(mydice,i,res);
+		DiceJudgeSYONBEN(mydice,i,res);
+		Arashi(mydice,i,res);
+
+	}
+	public void standardDiceJudge(int[][]mydice,int i,boolean[][] res){				//サイコロの値の入れ替え（０番をチンチロリンの値に）
+		int es;
+	
+			if(mydice[i][0]==mydice[i][1]){
+				es=mydice[i][0];
+				mydice[i][0]=mydice[i][2];
+				mydice[i][2]=es;
+				res[i][2]=true;
+			}
+			if(mydice[i][0]==mydice[i][2]){
+				es=mydice[i][0];
+				mydice[i][0]=mydice[i][1];
+				mydice[i][1]=es;
+				res[i][2]=true;
+			}
+			if(mydice[i][1]==mydice[i][2]){
+				//00に00を入れる処理になるので書かなくていい
+				res[i][2]=true;
+			}
+		}
+	
+	
+	public void DiceJudgeSYONBEN(int[][]mydice,int i,boolean[][] res){			//ションベン
+		//////////////////////////////////////////////////////////////////////目無しによる負け
+		if(mydice[i][0]!=mydice[i][1] 
+				&& mydice[i][0]!=mydice[i][2] 
+						&& mydice[i][1]!=mydice[i][2]){	//全てのサイコロの目が違ったら目がないので負け
+			res[i][2]=false;
+		}
+	}
+	
+	public void Arashi(int[][]mydice,int i,boolean[][] res){					//アラシ(子の時だけ)
+		if(mydice[i][0]==mydice[i][1] 
+				&& mydice[i][0]==mydice[i][2] 
+						&& mydice[i][1]==mydice[i][2]){
+			res[i][3]=true;
+		}
+	}
+	///////////////////////////////////////////////////////////////////////////////////////////役の判定
+	public void role(String[][] playerName,int[][]mydice,int i,boolean[][] res){
+		standardDiceJudge(mydice,i,res);
+		DiceJudgeSYONBEN(mydice,i,res);
+		Arashi(mydice,i,res);
+		
+		if(res[i][3]==true){
+			playerName[i][1]="アラシ役["+i+"]";
+		}
+		if(res[i][2]==true){
+			playerName[i][1]="数字"+mydice[i][0]+"";
+		}
+		
+	}
+	///////////////////////////////////////////////////////////////////////////////////////////データの判定　勝敗
+	public void victory(String[][] playerName,int[][]mydice,int i,boolean[][] res){
+		
+		if(res[0][2]==true){				/////親がアラシだった場合
+			if(res[i][1]==true){			////子供もアラシなら
+				if(mydice[0][0]>mydice[i][0]){			////サイコロデータの[0]番はデータ処理のときに使えるデータに入れ替えられている
+					
+				}
+			}
+		}
+		
+	}
+
+
+
+}

@@ -1,0 +1,8 @@
+
+public class Ex064_teacher {
+		public static void main(String[]augs){
+			
+			int [] num = new int[52];
+			
+		}
+}

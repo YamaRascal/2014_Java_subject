@@ -1,0 +1,11 @@
+package Java_Beginner;
+
+public class Num4_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			int num = 126457;
+			System.out.println((num/10000)+"万"+(num-(num/10000)));
+	}
+
+}

@@ -1,0 +1,24 @@
+package ex086;
+
+public class Car {
+	
+
+	private String name;
+	private int birthYear;
+	private double weigth;
+
+	public String getName(){
+		return name;
+	}
+	
+
+	public int MakeYear(){
+		return birthYear;
+	}
+
+	
+	public double getWeigth(){
+		return weigth;
+	}
+	
+}

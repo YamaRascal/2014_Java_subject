@@ -1,0 +1,43 @@
+//未完成
+
+//最大値を配列の後ろへ
+import java.util.Scanner;
+public class Sort01_max {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		System.out.print("配列の最大値を入力＞");
+		int len = scan.nextInt();
+
+		int[] a = new int[len];
+		int max=0;
+		int num=0;
+		//配列に乱数を入力
+		System.out.print("乱数の最大値を入力＞");
+		int n = scan.nextInt();
+		for(int i = 0;i<a.length;i++){
+			a[i]=(int)(Math.random()*n);
+		}
+		//この時点で配列にはバラバラに数字が入っている
+
+		for(int cnt=0;cnt<a.length;cnt++){
+			
+			for(int i=0;i<a.length-cnt;i++){
+				if(max<a[i]){
+					max=a[i];
+					num=i;
+				}
+			
+			int escape =a[a.length-cnt-1];
+			a[9-cnt]=max;
+			a[num]=escape;
+		}
+		}
+
+
+
+	}
+
+
+}

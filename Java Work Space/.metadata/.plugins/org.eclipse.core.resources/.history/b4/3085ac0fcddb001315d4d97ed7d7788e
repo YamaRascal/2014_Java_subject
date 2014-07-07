@@ -1,0 +1,138 @@
+/*
+ * 2014/05/08-09
+ * Ex039_miss.java
+ * 14cm0132
+ * 山出　達也
+ */
+
+import java.util.Scanner;
+
+public class Ex039 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		
+		int y ,m ,d ,MaxD , D1 ,cm,countD , c0 ,c31 ,c30 ,c29 ,c28;
+		
+		System.out.print("年月日を入力 >");
+		y = scan.nextInt();
+		m = scan.nextInt();
+		d = scan.nextInt();
+		D1 = 0;
+		
+		if (y%4 == 0  && y%100 != 0 || y%400 == 0){
+			
+			for(cm = 0;cm < m;cm ++){
+				if(cm == 0 ){
+					MaxD = 0;
+					c0 = D1 + MaxD;
+					if(cm < m)continue;
+				System.out.println(("1月1日からの日数は") + d +c0);
+					}else if(cm == 1 || cm == 3 || cm == 5 || 
+						cm == 7 || cm == 8 || cm == 10 || cm == 12)
+						{MaxD = 31;
+							c31 = D1 + MaxD;
+								if(cm < m)continue;
+										System.out.println(("1月1日からの日数は") + d +c31);
+							}else if(cm == 4 || cm == 6 || cm == 9 || cm == 11 ){
+								MaxD = 30;
+									c30 = D1 + MaxD;
+										if(cm < m)continue;
+												System.out.println(("1月1日からの日数は") + d +c30);
+									}else if(cm == 2){
+										MaxD = 29;
+											c29 = D1 + MaxD;
+												if(cm < m)continue;
+														System.out.println(("1月1日からの日数は") + d +c29);
+														
+									}else 
+										if(cm <= 0 || cm >= 13){System.out.println("1〜１２月の間で入力してください");break;}
+				}
+		}
+		else 
+			{for(cm = 0;cm < m;cm ++){
+				
+				if(cm == 0 ){
+					MaxD = 0;
+					c0 = D1 + MaxD;
+					if(cm < m)continue;
+				System.out.println(("1月1日からの日数は") + d +c0);
+					}else if(cm == 1 || cm == 3 || cm == 5 || 
+						cm == 7 || cm == 8 || cm == 10 || cm == 12)
+					{MaxD = 31;
+					c31 = D1 + MaxD;
+						if(cm < m)continue;
+								System.out.println(("1月1日からの日数は") + d +c31);
+							}else if(cm == 4 || cm == 6 || cm == 9 || cm == 11 ){
+								MaxD = 30;
+								c30 = D1 + MaxD;
+								if(cm < m)continue;
+										System.out.println(("1月1日からの日数は") + d +c30);
+									}else if(cm == 2){
+										MaxD = 28;
+										c28 = D1 + MaxD;
+										if(cm < m)continue;
+												System.out.println(("1月1日からの日数は") + d +c28);
+									}else {System.out.println("1〜１２月の間で入力してください");
+									break;
+
+					
+			
+				
+				
+										
+										
+										
+							/*}else {System.out.println("1〜１２月の間で入力してください");
+							break; */
+						}//for
+			
+			}
+				
+
+			
+			
+			
+			
+			
+			/*
+			 * 
+			m1 = 31;
+			m2 = 29;
+			m3 = 31;
+			m4 = 30;
+			m5 = 31;
+			m6 = 30;
+			m7 = 31;
+			m8 = 31;
+			m9 = 30;
+			m10 = 31;
+			m11 = 30;
+			m12 = 31;
+			
+			switch(m){
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				System.out.println(m + "月は31日です");
+				break;
+			case 2:
+				System.out.println(m + "月は28日です");
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				System.out.println(m + "月は30日です");
+				break;
+				}*/
+		}
+
+	}
+
+}

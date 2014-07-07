@@ -1,0 +1,39 @@
+/*
+ * 2014/05/30
+ * Ex075.java
+ * 14cm0132
+ * 山出　達也
+ */
+public class Ex075 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num = 6;
+		int lo6 [];
+		lo6 = loto6();
+		show(lo6,num);
+
+	}
+	public static int [] loto6(){
+		int []loto=new int[43];
+		int lo6 []=new int[6];
+		int len = loto.length-1;
+		for(int i=0;i<=loto.length;i++){
+			loto[i]=1+i;
+		}
+		for(int i=0;i<6;i++){
+			int x=(int)(Math.random()*(43-i));
+			lo6[i]=loto[x];
+			int escape =loto[x];
+			loto[x]=loto[len-i];
+			loto[len-i]=escape;
+			
+		}
+		return lo6;
+	}
+	public static void show(int lo6 [],int num){			//データの出力メソッド
+		for(int i = 0;i<num;i++){
+			System.out.println("ロト６のあたり番号は"+ lo6[i]);
+		}
+	}
+}

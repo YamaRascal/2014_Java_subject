@@ -1,0 +1,32 @@
+package ex084;
+
+public class Car {
+
+		private String name;
+		private int birthYear;
+		private int weigth;
+		
+		public void setName(String n){
+			name = n;
+		}
+		
+		public String getName(){
+			return name;
+		}
+		
+		public void setMake(int y){
+			birthYear = y;
+		}
+		public int MakeYear(){
+			return birthYear;
+		}
+		
+		public void setWeigth(int w){
+			weigth = w;
+		}
+		
+		public int getWeigth(){
+			return weigth;
+		}
+
+}

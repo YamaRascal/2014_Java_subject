@@ -1,0 +1,24 @@
+package tintirorin;
+import java.util.Scanner;
+public class Tintiro_Main {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("プレイヤー人数を入力してください>");
+		int menberNum = scan.nextInt();
+		Process p = new Process(menberNum);
+		
+		String[] playerName = new String[menberNum];		//プレイヤーの名前を収納するString型の配列
+		int []mydice = new int[menberNum];					//プレイヤーのサイコロの出目を収納するint型の配列
+		
+		p.playerscan(playerName);
+
+		
+		for(int i=0;i<menberNum;i++){
+		p.dicedeta(i);						//サイコロを３個ふり、出た目も表示させる
+		mydice[i]=p.judge(i);				//表示後、勝負時に使用するサイコロの目を判定し表示する
+		
+		}
+	}
+
+}

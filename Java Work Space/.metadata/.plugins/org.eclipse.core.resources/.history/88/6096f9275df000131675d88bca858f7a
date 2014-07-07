@@ -1,0 +1,29 @@
+
+public class Sort01_max {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] a = {100,500,60,3,54,21,65,98,17,900};
+		int max=0;
+		int num=0;
+		
+		for(int cnt=0;cnt<a.length;cnt++){
+		
+		for(int i=0;i<a.length-cnt;i++){
+			if(max<a[i]){
+				max=a[i];
+				num=i;
+			}
+		}
+		int escape =a[9-cnt];
+		a[9-cnt]=max;
+		a[num]=escape;
+		}
+	
+		
+		
+		
+	}
+	
+
+}

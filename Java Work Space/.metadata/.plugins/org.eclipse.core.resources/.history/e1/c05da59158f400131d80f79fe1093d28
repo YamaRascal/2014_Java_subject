@@ -1,0 +1,40 @@
+package tintirorin;
+import java.util.*;
+public class TestObject {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<String> aaa =new ArrayList<String>();
+		aaa.add("a");
+		aaa = setting1(aaa);
+		setting2(aaa);
+		
+		for(int i=0;i<aaa.size();i++){
+			System.out.println(aaa.get(i));
+		}
+		
+		int[] suuji = new int[1];
+		suuji = settingInt1(suuji);
+		settingInt2(suuji);
+		
+		System.out.println(suuji);
+	}
+
+	public static ArrayList<String> setting1(ArrayList<String> aaa ){
+	aaa.add("b");
+	return aaa;
+	}
+	
+	public static void setting2(ArrayList<String> aaa){
+		aaa.add("c");
+	}
+	////////////////////////////////////////////////////
+	public static int[] settingInt1 (int[] suuji){
+		suuji[0] =1;
+		return suuji;
+	}
+	public static void settingInt2(int[] suuji){
+		suuji[0] = 2;
+	}
+
+}

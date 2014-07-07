@@ -1,0 +1,26 @@
+package tintirorin;
+
+public class Process {
+	static String name;
+	static String cpu="cpu";
+	Process(String name){
+		this.name = name;
+	}
+	int num =3;	//サイコロの数
+	static int []mydice = new int[3];	//プレイヤーのサイコロの出目
+	static int []cpudice = new int[3];	//CPUのサイコロの出目
+
+	public  void dicedeta(){
+		//チンチロリンのルール通り３つふる処理
+		for(int i=0;i<num;i++){
+			mydice[i] = (int)(Math.random()*6)+1;	//サイコロで１〜６の目を出す
+		}
+	}
+
+	public void showDate(){
+		for(int i=0;i<num;i++){
+			System.out.println(mydice[i]);
+		}
+	}
+
+}

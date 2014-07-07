@@ -1,0 +1,13 @@
+package Java_Beginner;
+
+public class Num3_3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("埼玉県\t\tさいたま市\t\t約7,00万");
+		System.out.println("千葉県\t\t千葉県\t\t約6,00万");
+		System.out.println("東京\t\t東京（新宿区）\t12,40万");
+		System.out.println("神奈川県\t\t横浜市\t\t8,70万");
+	}
+
+}

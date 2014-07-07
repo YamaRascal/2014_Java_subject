@@ -1,0 +1,14 @@
+package tintirorin;
+
+public class Tintiro_Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//サイコロをふる処理
+		int dice = (int)(Math.random()*5)+1;
+		
+		System.out.println(dice);
+	}
+
+}

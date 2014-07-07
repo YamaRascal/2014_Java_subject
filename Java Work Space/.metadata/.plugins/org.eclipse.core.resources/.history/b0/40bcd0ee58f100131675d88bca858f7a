@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Factorial {
+		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		
+		long max=1;		
+		long x =scan.nextLong();
+		
+		long fac=fact(max,x);
+		System.out.println(x+"の階乗は＞"+fac);
+		
+	}
+	static long fact(int max,int x){
+			max *=x;
+		x--;
+		if(x>0){
+			return fact(max,x);
+		}else{
+			return max;
+		}
+		
+	}
+	
+	
+}

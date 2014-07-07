@@ -1,0 +1,16 @@
+package tintirorin;
+import java.util.Scanner;
+public class Tintiro_Main {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("あなたの名前を入力してください>");
+		String player = scan.nextLine();
+		
+		Process p = new Process(player);
+		
+		p.dicedeta();
+		p.showDate();
+	}
+
+}

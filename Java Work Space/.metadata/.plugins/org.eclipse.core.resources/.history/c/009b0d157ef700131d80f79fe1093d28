@@ -1,0 +1,59 @@
+		import java.io.*;
+public class sosuu {
+	
+			public static String choice() throws IOException{
+				BufferedReader input =
+				new BufferedReader (new InputStreamReader (System.in));
+				String x = input.readLine( );
+				return x;
+			}
+			public static void main(String[] args) throws IOException{
+				//ëfêîÇãÅÇﬂÇÈ
+				
+				//É`ÉáÉCÉX
+				System.out.print("É`ÉáÉCÉXÇµÇƒÇ≠ÇæÇ≥Ç¢ > ");
+				String choice = choice();
+				System.out.print("édêÿÇËÇÉ`ÉáÉCÉXÇµÇƒÇ≠ÇæÇ≥Ç¢ > ");
+				String choice2 = choice();
+				
+				//Main
+				int Seisu = 1;			//èËó]éZÇ≥ÇÍÇÈëSêÆêî
+				int Jouyo;						//èËó]éZÇ∑ÇÈêÆêî
+				boolean judge = false;		//îªíË (F = ëfêî,T = äÑÇËêÿÇÍÇÈ)
+				int keta = 1;
+				
+				//åvéZÇ≥ÇÍÇÈêÆêîÇ1Ç∏Ç¬ëùÇ‚Ç∑
+				for (; Seisu < 5000;){
+					Seisu++;
+					
+					//åvéZÇ∑ÇÈêÆêîÇ1Ç∏Ç¬å∏ÇÁÇ∑
+					down:for (Jouyo = Seisu; Jouyo > 2;){
+						Jouyo--;
+						//èËó]Ç™0Ç»ÇÁîªíËÇTÇ…Ç∑ÇÈ
+						if ((Seisu % Jouyo) == 0 && Jouyo != 1){
+							judge = true;
+							break down;
+						}
+					}
+					
+					//îªíËÇ™TÇ»ÇÁãÛîíÅAFÇ»ÇÁï\é¶
+					if(judge == true){
+						judge = false;
+						System.out.print(choice +""+ choice +""+ choice +""+ choice +""+ choice2);
+					} else {
+						System.out.print(Seisu+"|");
+					}
+					
+					//10ÇÃà Ç™ïœÇÌÇÈÇ≤Ç∆Ç…â¸çs
+					if (Seisu > 10 * keta){
+						keta++;
+						System.out.println();
+					}
+
+				}
+			}
+		}
+
+	}
+
+}

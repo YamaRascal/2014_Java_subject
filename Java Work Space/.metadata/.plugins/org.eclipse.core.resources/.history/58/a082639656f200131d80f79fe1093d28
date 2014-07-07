@@ -1,0 +1,19 @@
+package tintirorin;
+
+public class Process {
+	Process(){
+		
+	}
+	
+	static int []mydice = new int[3];	//プレイヤーのサイコロの出目
+	static int []cpudice = new int[3];	//CPUのサイコロの出目
+	
+	public static void dicedeta(){
+		//チンチロリンのルール通り３つふる処理
+				for(int i=0;i<3;i++){
+				mydice[i] = (int)(Math.random()*6)+1;	//サイコロで１〜６の目を出す
+				}
+				
+	}
+	
+}

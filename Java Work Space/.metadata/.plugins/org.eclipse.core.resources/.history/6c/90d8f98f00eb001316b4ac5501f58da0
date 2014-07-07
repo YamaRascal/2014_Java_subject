@@ -1,0 +1,43 @@
+//http://d.hatena.ne.jp/Romon_M/20130920/p1
+//問①　標準入力された値があればそのまま表示、値がなければエラーメッセージを表示するプログラムを作成してください。
+
+
+import java.util.Scanner;
+public class Q1_00 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		
+		/* ネットanswer
+		while(true) {
+			System.out.print(">");
+			
+			String str = scan.nextLine();
+			
+			if(str.equals("")){
+				System.out.println("未入力です");
+				continue;
+			}
+			if(str.equals("EXIT")){
+				break;
+			}
+			System.out.println(str);
+		}*/
+		
+		for(;;){
+			System.out.print("入力>");
+			
+			int str = scan.nextInt();
+			
+			if(int.equals()){
+				System.out.println("未入力です");
+				continue;
+			}else{
+				System.out.println(str);
+				break;
+			}
+		}
+	}
+
+}

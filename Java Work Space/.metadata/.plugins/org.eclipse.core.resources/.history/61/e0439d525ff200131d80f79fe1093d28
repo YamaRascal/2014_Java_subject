@@ -1,0 +1,52 @@
+package tintirorin;
+import java.util.Scanner;
+public class Process {
+	Scanner scan = new Scanner(System.in);
+	int num =3;					//サイコロの数
+	int menberNum;				//参加人数
+	static int []mydice = new int[3];	//プレイヤーのサイコロの出目
+
+	Process(int num){	//コンストラクタで参加人数の代入
+		menberNum = num;
+	}
+
+	public void playerscan(){		//////////////////////////////////////////////////////////////////////プレイヤー情報の入力//
+		String [] playerName = new String[menberNum];		//プレイヤーの名前を収納するString型の配列
+		int []mydice = new int[menberNum];					//プレイヤーのサイコロの出目を収納するint型の配列
+
+		for(int i=0;i<menberNum;i++){		//プレイヤーの名前を入力するfor文
+			if(i==0){
+				System.out.print("親になる人の名前を入力してください>");	////////////////配列０番が親
+				playerName[i] = scan.nextLine();
+			}else{
+				System.out.print("あなたの名前を入力してください>");		////////////////子の名前の入力
+				playerName[i] = scan.nextLine();}
+		}
+	}
+
+	
+	//static int []cpudice = new int[3];	//CPUのサイコロの出目
+
+	public  void dicedeta(){				//サイコロを３つふる処理（サイコロ配列に数字を代入）
+		for(int i=0;i<num;i++){
+			mydice[i] = (int)(Math.random()*6)+1;	//サイコロで１〜６の目を出す
+		}
+		showDate();					
+	}
+
+	public void showDate(){				//サイコロの値の表示
+		System.out.print("サイコロの出目は");
+		for(int i=0;i<num;i++){
+			System.out.print(mydice[i]+"　・　");
+		}
+		System.out.println();
+		System.out.print("よって");
+		judge();
+	}
+	public void judge(){
+		if(mydice[1]==mydice[2]){
+			
+		}
+	}
+
+}

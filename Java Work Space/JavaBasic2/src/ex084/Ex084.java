@@ -1,0 +1,17 @@
+package ex084;
+
+public class Ex084 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car c1 = new Car();
+		
+		c1.setName("フィット");
+		c1.setMake(2005);
+		c1.setWeigth(1.53);
+		System.out.println("この車は"+c1.MakeYear()+"年製の"+c1.getName()+"です");
+		
+		System.out.println("車体重量は"+c1.getWeigth()+"トンです。");
+	}
+
+}

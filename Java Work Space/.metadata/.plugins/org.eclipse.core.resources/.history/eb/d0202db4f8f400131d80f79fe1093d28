@@ -1,0 +1,48 @@
+package tintirorin;
+import java.util.Scanner;
+public class Tintiro_Main {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		boolean[] res=new boolean[2] ;	//親の即勝ち(==[0])、即負け(==[1])、判定
+		System.out.print("プレイヤー人数を入力してください>");
+		int menberNum = scan.nextInt();
+		Process p = new Process(menberNum);
+
+		String[] playerName = new String[menberNum];		//プレイヤーの名前を収納するString型の配列
+		int [][]mydice = new int[menberNum][3];					//プレイヤーのサイコロの出目を収納するint型の配列
+
+		p.playerscan(playerName);
+
+		for(int i=0;i<menberNum;i++){/////////
+			for(int j=0;j<3;j++){
+			System.out.println(playerName[i]+"の\nサイコロの出目は");
+			
+			p.dicedata(mydice,i);						//サイコロを３個ふり、出た目も表示させる
+			p.showDate(mydice,i);
+			//p.judge(mydice[i][3],menberNum);				//表示後、勝負時に使用するサイコロの目を判定し表示する
+			//System.out.println("\n"+(mydice[i]==0?"『出目がありません』":"あなたの出目は"+mydice[i]+"です"));
+				System.out.print("今の値を捨てて、ふり直しますか？(最大３回まで)\nふり直すなら　１　を\n進むなら　２　を\n入力>");
+				int x =scan.nextInt();
+				if(x==2){
+					break;
+				}
+			}
+			if(i==0){
+				p.masterOutcome(mydice,res);
+				if(res[0]=true){
+					System.out.println("\n\n親が４５６を出したため親の即勝ちです");
+					break;
+				}
+				if(res[1]==true){
+					System.out.println("\n\n親が１２３を出したため親の即負けです");
+				}
+				continue;}
+			boolean outcome=p.outcome(mydice,i,res);
+		}
+		
+
+
+	}
+
+}

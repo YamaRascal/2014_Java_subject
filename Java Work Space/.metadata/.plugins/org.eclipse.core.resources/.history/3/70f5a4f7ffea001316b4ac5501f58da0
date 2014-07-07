@@ -1,0 +1,27 @@
+//http://d.hatena.ne.jp/Romon_M/20130920/p1
+
+
+import java.util.Scanner;
+public class Q1_00 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		
+		for(;;){
+			System.out.print(">");
+			
+			String str = scan.nextLine();
+			
+			if(str.equals("")){
+				System.out.println("未入力です");
+				continue;
+			}
+			if(str.equals("EXIT")){
+				break;
+			}
+			System.out.println(str);
+		}
+	}
+
+}

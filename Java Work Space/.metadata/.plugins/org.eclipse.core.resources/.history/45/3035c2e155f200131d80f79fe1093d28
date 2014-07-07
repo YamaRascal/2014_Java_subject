@@ -1,0 +1,16 @@
+package tintirorin;
+
+public class Tintiro_Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Process p = new Process();
+		
+		p.dicedeta();
+		
+		System.out.print(p.mydice);
+		
+	}
+
+}

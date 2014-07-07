@@ -1,0 +1,40 @@
+package tintirorin;
+import java.util.Scanner;
+public class Process {
+	Scanner scan = new Scanner(System.in);
+	
+	static String cpu="cpu";	//cpuの名前
+	static String name;			//プレイヤーの名前の変数宣言
+	int menberNum;				//参加人数
+	
+	Process(int num){	//コンストラクタで参加人数の代入
+		menberNum = num;
+	}
+	
+	public void playerscan(){
+	String [] playerName = new String[menberNum];
+	 int []mydice = new int[menberNum][3];	//プレイヤーのサイコロの出目
+	for(int i=0;i<menberNum;i++){
+		System.out.print("あなたの名前を入力してください>");
+		playerName[i] = scan.nextLine();
+	}
+	}
+	
+	int num =3;	//サイコロの数
+	//static int []mydice = new int[3];	//プレイヤーのサイコロの出目
+	static int []cpudice = new int[3];	//CPUのサイコロの出目
+
+	public  void dicedeta(){
+		//チンチロリンのルール通り３つふる処理
+		for(int i=0;i<num;i++){
+			mydice[i] = (int)(Math.random()*6)+1;	//サイコロで１〜６の目を出す
+		}
+	}
+
+	public void showDate(){
+		for(int i=0;i<num;i++){
+			System.out.println(mydice[i]);
+		}
+	}
+
+}

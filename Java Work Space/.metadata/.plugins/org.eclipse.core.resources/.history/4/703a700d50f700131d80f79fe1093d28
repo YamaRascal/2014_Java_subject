@@ -1,0 +1,25 @@
+/*
+ * 2014/06/05
+ * Ex082.java
+ * 14cm0132
+ * 山出　達也
+ */
+
+package ex083;
+
+public class Ex083 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Dog dog = new Dog();
+		
+		dog.setName("ポチ");
+		dog.getName();
+		
+		dog.setbirthYear(2003);
+		dog.getBirthYear();
+		
+		System.out.println(dog.getName());
+	}
+
+}
