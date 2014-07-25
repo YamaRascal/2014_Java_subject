@@ -14,9 +14,8 @@ public class Ex097 {
 			r2 = rand.nextInt(array.length);
 			System.out.println(r1/r2);
 		}
-		}catch(java.lang.ArithmeticException e){
+		}catch(ArithmeticException e){
 			System.out.println("エラー：ゼロで割られました");
-			return;
 		}
 	}
 

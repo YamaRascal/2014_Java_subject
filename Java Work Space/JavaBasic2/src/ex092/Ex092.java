@@ -8,7 +8,7 @@ public class Ex092 {
 		// TODO Auto-generated method stub
 		Ex092 hei = new Ex092();
 		
-		System.out.println("maxHeight="+Ex092.maxHeight);
+		System.out.println("maxHeight="+hei.maxHeight);
 		System.out.println("height="+hei.height);
 	}
 
